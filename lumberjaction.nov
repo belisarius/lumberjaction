@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Project type="Novelty Visual Novel" version="1.8" name="Lumberjaction" uid="300419623">
+<Project type="Novelty Visual Novel" version="1.8" name="Lumberjaction" uid="303583810">
     <Settings canvas-size="1027,768" enable-autoplay="true" skip-key="308" step-key="32" skip-speed="8" skip-mode="0" auto-key="65" auto-delay="1" master-volume="1" bgm-volume="1" effect-volume="1" vocal-volume="1" video-volume="1" />
     <Memory />
     <Counter>
-        <Asset name="Animation.0" count="2636" />
-        <Asset name="Font.Century Gothic 72" count="2638" />
+        <Asset name="Animation.0" count="4140" />
+        <Asset name="Font.Century Gothic 72" count="4142" />
         <Asset name="Shape.Triangle" count="1" />
-        <Asset name="Texture." count="490" />
-        <Asset name="Texture.Gradient" count="77" />
-        <Asset name="Texture.font_Century Gothic 72" count="2638" />
-        <Asset name="Texture.font_Century Gothic 72_2" count="2638" />
-        <Asset name="Texture.null" count="359" />
+        <Asset name="Texture." count="770" />
+        <Asset name="Texture.Gradient" count="121" />
+        <Asset name="Texture.font_Century Gothic 72" count="4142" />
+        <Asset name="Texture.font_Century Gothic 72_2" count="4142" />
+        <Asset name="Texture.null" count="563" />
         <Asset name="Texture.phone" count="1" />
         <Asset name="Texture.protag_ph" count="1" />
-        <Asset name="Texture.tex_border02" count="21" />
-        <Asset name="Texture.tex_border03" count="2235" />
-        <Asset name="Texture.tex_ui_sample1_buttons" count="453" />
+        <Asset name="Texture.tex_border02" count="33" />
+        <Asset name="Texture.tex_border03" count="3507" />
+        <Asset name="Texture.tex_ui_sample1_buttons" count="705" />
         <Asset name="Texture.tex_ui_sample1_frame" count="1" />
-        <Asset name="Texture.tex_ui_sample1_window" count="77" />
+        <Asset name="Texture.tex_ui_sample1_window" count="121" />
     </Counter>
     <ProjectAssets />
     <Story>
@@ -160,6 +160,14 @@
                     </Layer>
                     <Layer name="Novel interface" import="true" />
                 </Scene>
+                <Thread name="Smartass" uid="1537689149">
+                    <Action type="say" who="Protag" phrase="Hey, c&apos;mon, it&apos;s...uh...only one fifty-seven." portrait-auto="true" />
+                    <Action type="say" who="Protag" phrase="It&apos;s not that I don&apos;t love you, but I was right in the middle of a pretty great nap. What&apos;s this about?" portrait-auto="true" />
+                    <Action type="setvar" op="+" variable="gail_affection" value="10" />
+                </Thread>
+                <Thread name="Sleepy" uid="1262555801">
+                    <Action type="say" who="Protag" phrase="...Uh...what...?" portrait-auto="true" />
+                </Thread>
                 <Transition type="flash" time="1.5" color="#FFFFFF" pause="true" />
                 <Action type="say" who="Protag" phrase="Ugh..." portrait-auto="true" />
                 <Action type="fade" object="phone" wait="true" time="1" fade="in" />
@@ -169,11 +177,25 @@
                 <Action type="say" who="" phrase="*Groggy scrabbling for phone on bedside table*" portrait-auto="true" />
                 <Action type="say" who="Protag" phrase="...Hello?" portrait-auto="true" />
                 <Action type="say" who="Gail" phrase="Did I wake you up? Sorry, how inconsiderate of me to call at two in the afternoon." portrait-auto="true" />
-                <Action type="say" who="Protag" phrase="Hey, c&apos;mon, it&apos;s...uh...only one fifty-seven." portrait-auto="true" />
-                <Action type="say" who="Protag" phrase="It&apos;s not that I don&apos;t love you, but I was right in the middle of a pretty great nap. What&apos;s this about?" portrait-auto="true" />
+                <Action type="menu" menu="Sample menu">
+                    <Option phrase="Be a Smartass" action="thread" thread="Smartass" />
+                    <Option phrase="Be Sleepy" action="thread" thread="Sleepy" />
+                </Action>
                 <Action type="say" who="Gail" phrase="Well, I DID have a lead on a job for you, but I can definitely see how a nap would be more compelling. I know I&apos;d rather nap all day in my parents&apos; house than work for a living like any--" portrait-auto="true" />
                 <Action type="say" who="Protag" phrase="Yes, all right, all right, the nap will wait. What&apos;s the job?" portrait-auto="true" />
-                <Action type="say" who="Protag" phrase="" portrait-auto="true" />
+                <Action type="say" who="Gail" phrase="You remember my uncle, right? The one with the beard? He got me spot on his old logging crew when he went corporate." portrait-auto="true" />
+                <Action type="say" who="Protag" phrase="Yeah, I remember." portrait-auto="true" />
+                <Action type="say" who="Gail" phrase="Well, one of our guys just took off to go do MMA or something, so another spot just opened up. I figured you might be just the girl to fill it." portrait-auto="true" />
+                <Action type="say" who="Gail" phrase="It&apos;s good, tough work. Puts hair on your chest. Metaphorically. Plus, I mean, who says no to health care?" portrait-auto="true" />
+                <Action type="menu" menu="Sample menu">
+                    <Option phrase="Logging, huh? Okay, sign me up." action="nothing" />
+                    <Option phrase="Nah, I think I&apos;m good. Thanks, though." action="exit" />
+                </Action>
+                <Action type="say" who="Gail" phrase="Great! I&apos;ll shoot you an e-mail with a number you can call for a quick interview, but you&apos;ve pretty much got the job." portrait-auto="true" />
+                <Action type="say" who="Gail" phrase="Can&apos;t wait to be your boss!" portrait-auto="true" />
+                <Action type="say" who="Protag" phrase="Whoa, hold on..." portrait-auto="true" />
+                <Action type="fade" object="phone" wait="true" time="1" fade="out" />
+                <Action type="say" who="Protag" phrase="...Huh." portrait-auto="true" />
             </Page>
         </Chapter>
         <Screens>
