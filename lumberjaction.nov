@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Project type="Novelty Visual Novel" version="1.8" name="Lumberjaction" uid="303583810">
+<Project type="Novelty Visual Novel" version="1.8" name="Lumberjaction" uid="1167852204">
     <Settings canvas-size="1027,768" enable-autoplay="true" skip-key="308" step-key="32" skip-speed="8" skip-mode="0" auto-key="65" auto-delay="1" master-volume="1" bgm-volume="1" effect-volume="1" vocal-volume="1" video-volume="1" />
     <Memory />
     <Counter>
-        <Asset name="Animation.0" count="4140" />
-        <Asset name="Font.Century Gothic 72" count="4142" />
+        <Asset name="Animation.0" count="4516" />
+        <Asset name="Font.Century Gothic 72" count="4518" />
         <Asset name="Shape.Triangle" count="1" />
-        <Asset name="Texture." count="770" />
-        <Asset name="Texture.Gradient" count="121" />
-        <Asset name="Texture.font_Century Gothic 72" count="4142" />
-        <Asset name="Texture.font_Century Gothic 72_2" count="4142" />
-        <Asset name="Texture.null" count="563" />
+        <Asset name="Texture." count="840" />
+        <Asset name="Texture.Gradient" count="132" />
+        <Asset name="Texture.font_Century Gothic 72" count="4518" />
+        <Asset name="Texture.font_Century Gothic 72_2" count="4518" />
+        <Asset name="Texture.null" count="614" />
         <Asset name="Texture.phone" count="1" />
         <Asset name="Texture.protag_ph" count="1" />
-        <Asset name="Texture.tex_border02" count="33" />
-        <Asset name="Texture.tex_border03" count="3507" />
-        <Asset name="Texture.tex_ui_sample1_buttons" count="705" />
+        <Asset name="Texture.tex_border02" count="36" />
+        <Asset name="Texture.tex_border03" count="3825" />
+        <Asset name="Texture.tex_ui_sample1_buttons" count="768" />
         <Asset name="Texture.tex_ui_sample1_frame" count="1" />
-        <Asset name="Texture.tex_ui_sample1_window" count="121" />
+        <Asset name="Texture.tex_ui_sample1_window" count="132" />
     </Counter>
     <ProjectAssets />
     <Story>
         <Global>
             <Layer name="Novel interface" significant="true" uid="1302555896">
-                <Button click-sound="" hover-sound="" name="Button:All" position="0,-1" size="800,600" visible="false" enabled="false" caption="Button" action="script" script="ToggleTextFrame()" uid="679627444">
+                <Button click-sound="" hover-sound="" name="Button:All" position="0,-1" size="800,600" scale="1.28857" visible="false" enabled="false" caption="Button" action="script" script="ToggleTextFrame()" uid="679627444">
                     <Default />
                     <Hover />
                     <Pressed />
@@ -157,6 +157,7 @@
                             </Traits>
                         </Image>
                         <Image name="protag_ph" position="63,89" size="400,640" texture="protag_ph" uid="191234669" />
+                        <SystemText font="Arial" style="0" border="#000000" name="Native text object" position="271,25" size="477,73" text="Native text object" wrap="false" trim="false" animation="0" speed="20" uid="1983262481" />
                     </Layer>
                     <Layer name="Novel interface" import="true" />
                 </Scene>
@@ -169,6 +170,9 @@
                     <Action type="say" who="Protag" phrase="...Uh...what...?" portrait-auto="true" />
                 </Thread>
                 <Transition type="flash" time="1.5" color="#FFFFFF" pause="true" />
+                <Action type="fade" object="Native text object" wait="true" time="1" fade="in" />
+                <Action type="settext" object="Native text object" phrase="June 10, 2014" />
+                <Action type="fade" object="Native text object" wait="true" time="1" fade="out" />
                 <Action type="say" who="Protag" phrase="Ugh..." portrait-auto="true" />
                 <Action type="fade" object="phone" wait="true" time="1" fade="in" />
                 <Action type="say" who="Phone" phrase="*Ring* *Ring*" portrait-auto="true" />
